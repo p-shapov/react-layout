@@ -1,4 +1,5 @@
-const CracoAlias = require('craco-alias');
+const { CracoAliasPlugin } = require('react-app-alias');
+const SassResourcesLoader = require('craco-sass-resources-loader');
 
 module.exports = {
   webpack: {
@@ -6,11 +7,16 @@ module.exports = {
   },
   plugins: [
     {
-      plugin: CracoAlias,
+      plugin: SassResourcesLoader,
       options: {
-        source: 'tsconfig',
+        resources: './src/shared/styles/global.scss',
+      },
+    },
+    {
+      plugin: CracoAliasPlugin,
+      options: {
         baseUrl: '.',
-        tsConfigPath: './tsconfig.path.json',
+        tsconfig: './tsconfig.json',
       },
     },
   ],
