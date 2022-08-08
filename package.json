@@ -1,11 +1,12 @@
 {
-  "name": "rest-api-est",
+  "name": "react-layout",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
+    "ts:scss": "typed-scss-modules src/**/module.scss -n none -e default -u",
+    "start": "concurrently \"npm:ts:scss -- -w\" \"craco start\"",
+    "build": "npm run ts:scss && craco build",
+    "test": "concurrently \"npm:ts:scss -- -w\" \"craco test\"",
     "eject": "craco eject"
   },
   "eslintConfig": {
@@ -28,10 +29,10 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "classnames": "^2.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "the-new-css-reset": "^1.7.2",
-    "typescript": "^4.7.4"
+    "the-new-css-reset": "^1.7.2"
   },
   "devDependencies": {
     "@craco/craco": "^6.4.5",
@@ -43,13 +44,18 @@
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "concurrently": "^7.3.0",
     "craco-alias": "^3.0.1",
     "eslint": "^8.18.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-prettier": "^4.0.0",
+    "node-sass": "^7.0.1",
     "prettier": "2.7.1",
     "react-scripts": "^5.0.1",
-    "sass": "^1.54.0"
+    "sass": "^1.54.3",
+    "serve": "^14.0.1",
+    "typed-scss-modules": "^6.5.0",
+    "typescript": "^4.7.4"
   }
 }

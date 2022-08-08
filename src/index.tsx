@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import 'the-new-css-reset';
-import './shared/styles/global.scss';
+import 'shared/styles/global.scss';
 
 import { App } from './app';
 
