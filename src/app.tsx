@@ -1,7 +1,11 @@
+import { Route, Routes } from 'react-router';
+
+import { Home } from './pages/home';
+
 export const App = () => {
   return (
-    <div>
-      <span>App</span>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
   );
 };
