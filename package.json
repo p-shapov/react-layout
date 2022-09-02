@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "gen-modules": "typed-scss-modules src/**/module.scss -n none -e default -d @import'./src/shared/styles/global.scss'; -u",
+    "gen-modules": "typed-scss-modules src/**/*.module.scss -n none -e default -d @import'./src/shared/styles/global.scss'; -u",
     "start": "concurrently \"npm:gen-modules -- -w\" \"craco start\"",
     "build": "npm run gen-modules && craco build",
     "test": "concurrently \"npm:gen-modules -- -w\" \"craco test\"",
